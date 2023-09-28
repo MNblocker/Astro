@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link  id="panic" rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+   <div class="panic">
     <button onclick="window.location.href = 'https://www.google.com';">
       panic
     </button>
+    </div>
   </head>
   <body>
-    <iframe
-      src="https://raw.githack.com/3kh0/3kh0-assets/main/Run 2/index.html"
-      title="RUN 2" height="960" width="1600"
-    ></iframe>
+ <iframe id="github-iframe" src=""></iframe>
+<script>
+    fetch('https://api.github.com/repos//hubot-mubot/contents/src/mubot.coffee')
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            var iframe = document.getElementById('github-iframe');
+            iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+        });
+</script>
+
     <footer>
       <nav>
         <a href="./GamesList.html">ok. heres game</a>
